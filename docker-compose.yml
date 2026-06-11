@@ -8,7 +8,7 @@ services:
       - headless=true
       - env=${TEST_ENVIRONMENT:-stage}
     command: >
-      sh -c "mvn test -pl ui -Dheadless=true -Dbase.url=$${BASE_URL} -q"
+      sh -c "mvn test -pl ui ``-Dheadless=true` ``-Dbase.url=$${BASE_URL} -q"
 
   api-tests:
     build: .
@@ -17,4 +17,4 @@ services:
     environment:
       - base.url=${API_BASE_URL:-http://localhost:3000}
     command: >
-      sh -c "mvn test -pl api -Dbase.url=$${API_BASE_URL} -q"
+      sh -c "mvn test -pl api ``-Dbase.url=$${API_BASE_URL} -q"

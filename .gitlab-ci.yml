@@ -19,7 +19,7 @@ build:
       when: always
   image: maven:3.9-eclipse-temurin-17
   before_script:
-    - mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps chromium" -q
+    - mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI ``-Dexec.args=install --with-deps chromium`` -q
   script:
     - mvn clean compile -pl core,ui -q
   tags:
@@ -32,9 +32,9 @@ ui-tests:
       when: always
   image: maven:3.9-eclipse-temurin-17
   before_script:
-    - mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps chromium" -q
+    - mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI ``-Dexec.args=install --with-deps chromium`` -q
   script:
-    - mvn test -pl ui -Dheadless=$HEADLESS -Dbase.url=$BASE_URL -q
+    - mvn test -pl ui ``-Dheadless=$HEADLESS`` ``-Dbase.url=$BASE_URL`` -q
   artifacts:
     paths:
       - ui/target/allure-results/
@@ -49,7 +49,7 @@ api-tests:
       when: always
   image: maven:3.9-eclipse-temurin-17
   script:
-    - mvn test -pl api -Dbase.url=$BASE_URL -q
+    - mvn test -pl api ``-Dbase.url=$BASE_URL`` -q
   artifacts:
     paths:
       - api/target/allure-results/

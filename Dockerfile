@@ -14,4 +14,4 @@ COPY core ./core
 COPY ui ./ui
 COPY api ./api
 
-CMD ["mvn", "test", "-pl", "ui", "-Dheadless=true", "-q"]
+CMD ["mvn", "test", "-pl", "ui", ``-Dheadless=true``, "-q"]
