@@ -2,6 +2,7 @@ target/
 .idea/
 *.iml
 *.log
+.allure/
 allure-results/
 allure-report/
 test-output/
