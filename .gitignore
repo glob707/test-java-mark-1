@@ -1,0 +1,10 @@
+target/
+.idea/
+*.iml
+*.log
+allure-results/
+allure-report/
+test-output/
+node_modules/
+*.class
+.DS_Store

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Tests" parallel="none">
+    <listeners>
+        <listener class-name="com.test.mark1.core.RetryTransformer"/>
+    </listeners>
+    <test name="API Tests">
+        <packages>
+            <package name="com.test.mark1.api.tests"/>
+        </packages>
+    </test>
+</suite>
