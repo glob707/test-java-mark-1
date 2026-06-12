@@ -29,6 +29,7 @@
         <jackson.version>2.17.3</jackson.version>
         <aspectj.version>1.9.22.1</aspectj.version>
         <surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
+        <pitest.version>1.19.0</pitest.version>
     </properties>
 
     <dependencyManagement>
@@ -125,6 +126,27 @@
                     <version>2.12.0</version>
                     <configuration>
                         <reportVersion>2.29.0</reportVersion>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.pitest</groupId>
+                    <artifactId>pitest-maven</artifactId>
+                    <version>1.19.0</version>
+                    <configuration>
+                        <targetClasses>
+                            <param>com/test/mark1/**/*.class</param>
+                        </targetClasses>
+                        <targetTests>
+                            <param>com/test/mark1/**/*.class</param>
+                        </targetTests>
+                        <outputFormats>
+                            <outputFormat>XML</outputFormat>
+                            <outputFormat>HTML</outputFormat>
+                        </outputFormats>
+                        <mutationThreshold>60</mutationThreshold>
+                        <coverageThreshold>80</coverageThreshold>
+                        <threads>4</threads>
+                        <verbose>true</verbose>
                     </configuration>
                 </plugin>
             </plugins>

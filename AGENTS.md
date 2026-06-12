@@ -86,6 +86,30 @@ make api-t T=XYZ  # specific API test
 
 Always use Context7 MCP tools when you need library/framework/API documentation, code examples, setup steps, or configuration — do this automatically without waiting for the user to say "use context7". Call `resolve-library-id` to find the right library, then `query-docs` to get the relevant docs.
 
+## PITest (Mutation Testing)
+
+### Run PITest
+```bash
+# Run mutation tests on core module
+mvn test -pl core -am -DskipTests -DskipITs -DskipUI
+
+# Generate mutation report
+mvn org.pitest:pitest-maven:mutationCoverageReport -pl core -am
+
+# Run with specific configuration
+mvn org.pitest:pitest-maven:mutationCoverageReport -pl core -am -DmutationThreshold=60 -DcoverageThreshold=80
+```
+
+### Configuration
+- **Mutation Threshold**: 60% (minimum mutation score)
+- **Coverage Threshold**: 80% (minimum line coverage)
+- **Output Formats**: XML and HTML reports
+- **Threads**: 4 (parallel execution)
+
+### Reports
+- **XML Report**: `target/pit-reports/pit-reports.xml`
+- **HTML Report**: `target/pit-reports/index.html`
+
 ## CI/CD
 
 ```bash

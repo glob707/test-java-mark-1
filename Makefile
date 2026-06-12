@@ -1,4 +1,4 @@
-.PHONY: ui api t api-t install all
+.PHONY: ui api t api-t install all pitest
 
 all: ui api
 
@@ -16,3 +16,6 @@ api-t:
 
 install:
 	mvn install -DskipTests
+
+pitest:
+	mvn org.pitest:pitest-maven:mutationCoverageReport -pl core -am
