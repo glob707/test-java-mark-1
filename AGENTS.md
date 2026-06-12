@@ -26,16 +26,16 @@ test-java-mark-1/
 
 ```bash
 # All UI tests
-mvn test -pl ui -am -Dheadless=true
+mvn test -pl ui -am ``-Dheadless=true`
 
 # All API tests
 mvn test -pl api -am
 
 # Specific UI test
-mvn test -pl ui -am -Dtest=TestName -Dheadless=true
+mvn test -pl ui -am ``-Dtest=TestName` ``-Dheadless=true`
 
 # Specific API test
-mvn test -pl api -am -Dtest=TestName
+mvn test -pl api -am ``-Dtest=TestName`
 
 # Allure report
 mvn allure:serve
@@ -43,7 +43,7 @@ mvn allure:serve
 
 ### Makefile shortcuts
 ```bash
-make ui       # mvn test -pl ui -am -Dheadless=true
+make ui       # mvn test -pl ui -am ``-Dheadless=true`
 make api      # mvn test -pl api -am
 make t T=XYZ  # specific UI test
 make api-t T=XYZ  # specific API test
@@ -99,5 +99,5 @@ docker compose run --rm api-tests
 BASE_URL=https://stage.example.com docker compose run --rm ui-tests
 
 # Maven directly
-mvn test -pl ui -Dheadless=true -Dbase.url=https://stage.example.com
+mvn test -pl ui ``-Dheadless=true` ``-Dbase.url=https://stage.example.com
 ```
