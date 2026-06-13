@@ -2,7 +2,7 @@
 <suite name="UI Tests" parallel="none">
     <listeners>
         <listener class-name="com.test.mark1.listeners.AllureListener"/>
-        <listener class-name="com.test.mark1.core.RetryTransformer"/>
+        <listener class-name="com.test.mark1.elements.RetryTransformer"/>
     </listeners>
     <test name="UI Tests">
         <packages>

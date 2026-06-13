@@ -6,10 +6,10 @@ test-java-mark-1/
 ├── pom.xml              (parent — packaging pom, manages versions)
 ├── core/                (shared core: Element, Be, Have, ApiClient, ...)
 │   └── src/main/java/com/test/mark1/
-│       ├── core/        — Element, Button, Input, CheckBox, TextLabel,
-│       │                  Select, Event, Condition, Be, Have, RetryAnalyzer
+│       ├── elements/    — Element, Button, Input, CheckBox, TextLabel,
+│       │                  Select, Condition, Be, Have, RetryAnalyzer
 │       ├── pages/       — BasePage
-│       ├── config/      — Settings
+│       ├── config/      — Settings (YAML)
 │       ├── utils/       — Generator
 │       └── api/         — ApiConfig, ApiClient
 ├── ui/                  (UI tests — Playwright + TestNG)
@@ -70,17 +70,14 @@ make api-t T=XYZ  # specific API test
 - Tests extend `ApiFixture`, use `client.request()` for calls
 
 ### Environment config
-- `config.properties` — defaults (dev)
-- `config-stage.properties` — stage overrides
-- `config-prod.properties` — prod overrides
+- `config.yaml` — defaults (dev) with environment-specific sections
 - Select via `-Denv=stage` or `-Denv=prod`
 
 ## First setup
-1. Set `base.url` in `core/src/main/resources/config.properties`
-2. (Optional) Create `config-stage.properties` / `config-prod.properties` for envs
-3. Add your page components in `ui/src/test/.../components/`
-4. Add your API tests in `api/src/test/.../api/tests/`
-5. Set `headless=true` for CI
+1. Set configuration in `core/src/main/resources/config.yaml`
+2. Add your page components in `ui/src/test/.../components/`
+3. Add your API tests in `api/src/test/.../api/tests/`
+4. Set `headless=true` for CI
 
 ## Context7
 

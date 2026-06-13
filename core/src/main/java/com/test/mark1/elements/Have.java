@@ -1,4 +1,4 @@
-package com.test.mark1.core;
+package com.test.mark1.elements;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 

@@ -1,4 +1,4 @@
-package com.test.mark1.core;
+package com.test.mark1.elements;
 
 import org.testng.IAnnotationTransformer;
 import org.testng.IRetryAnalyzer;

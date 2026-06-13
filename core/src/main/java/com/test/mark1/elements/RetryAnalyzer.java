@@ -1,4 +1,4 @@
-package com.test.mark1.core;
+package com.test.mark1.elements;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

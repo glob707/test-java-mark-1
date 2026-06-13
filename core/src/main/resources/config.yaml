@@ -1,0 +1,25 @@
+base.url: http://localhost:3000
+base.api.url: http://localhost:8080
+browser: chromium
+timeout: 10
+env: dev
+headless: false
+mock: off
+
+stage:
+  base.url: http://stage.example.com
+  base.api.url: http://stage-api.example.com
+  browser: firefox
+  timeout: 15
+  env: stage
+  headless: true
+  mock: off
+
+prod:
+  base.url: http://prod.example.com
+  base.api.url: http://prod-api.example.com
+  browser: webkit
+  timeout: 20
+  env: prod
+  headless: true
+  mock: off
